@@ -4,7 +4,7 @@
 DNA = "ACGACTCGAGCTAGCGTACGAGCTCAGCTAGC"
 
 
-def create_kmers(sequence, kmer_size):
+def create_kmers(sequence, kmer_size, make_lower=False):
 	"""
 	This function creates a list of kmers of a given length from a given string
 	:param sequence: The string to be converted into kmers
@@ -15,6 +15,9 @@ def create_kmers(sequence, kmer_size):
 	index = 0
 
 	kmers = []
+
+	if make_lower:
+		sequence = sequence.lower()
 
 	while index + kmer_size <= len(sequence):
 		
